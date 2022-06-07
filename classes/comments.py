@@ -1,4 +1,5 @@
 class Comments:
+    """Класс, содержащий комментарии постов"""
 
     def __init__(self,
                  post_id,

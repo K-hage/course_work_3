@@ -1,4 +1,5 @@
 class Post:
+    """Класс для хранения поста"""
 
     def __init__(self,
                  poster_name,
@@ -26,6 +27,10 @@ class Post:
                f"Порядковый номер: {self.pk}"
 
     def text_for_tag_link(self):
+        """
+        Преобразует хештеги текста поста в ссылки
+        """
+
         new_text = ""
         for word in self.content.split():
             if '#' == word[0]:
