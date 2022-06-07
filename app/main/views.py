@@ -17,6 +17,8 @@ def main_page():
 @main_blueprint.route('/post/<int:post_id>/')
 def post_page(post_id):
     post = PostDAO().get_post_by_pk(post_id)
+    if post is None:
+        return abort(404)
     comments = CommentsDAO().get_comments_by_post_id(post_id)
     post.text_for_tag_link()
 
